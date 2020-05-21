@@ -1,24 +1,25 @@
-# README
+# Projeto BBB Kudos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+----
 
-Things you may want to cover:
+### Versões das bibliotecas
 
-* Ruby version
+Ruby: 2.6.3
 
-* System dependencies
+Rails: 6.0.3.1
 
-* Configuration
+### Modelo do BD
+![GitHub Logo](db.png)
 
-* Database creation
+### Instalação do projeto
+```
+$ git clone
+```
 
-* Database initialization
+### Rodando o projeto
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ bundle install
+$ rails db:create db:migrate db:seed
+$ rails s
+```
