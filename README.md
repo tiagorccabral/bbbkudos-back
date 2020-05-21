@@ -13,13 +13,14 @@ Rails: 6.0.3.1
 
 ### Instalação do projeto
 ```
-$ git clone
+$ git clone https://github.com/tiagorccabral/bbbkudos-back.git
+$ cd bbbkudos-back
+$ bundle install
+$ rails db:create db:migrate db:seed
 ```
 
 ### Rodando o projeto
 
 ```
-$ bundle install
-$ rails db:create db:migrate db:seed
 $ rails s
 ```
