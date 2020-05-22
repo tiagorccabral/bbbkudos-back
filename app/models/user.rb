@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   has_one_attached :profile_image
 
+  has_many :kudos, through: :user_kudos
+
   validates_presence_of :email
   validates_uniqueness_of :email
   validates_presence_of :name

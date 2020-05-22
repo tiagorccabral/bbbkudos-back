@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     resources :users
     post 'login', to: 'sessions#create'
     resources :kudos
+    resources :user_kudos
+    post 'available_user_kudos', to: 'user_kudos#available_user_kudos'
   end
 end

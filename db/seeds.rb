@@ -66,8 +66,8 @@ puts "Prontinho! Email: <primeiro_nome>@email.com e senha: <primeiro_nome>"
 
 puts "Gerando Kudos..."
 
-kudo = Kudo.create(name: "Eu aprendi", kudo_type: 1)
-kudo = Kudo.create(name: "Foi incrível", kudo_type: 1)
-kudo = Kudo.create(name: "Sou grato", kudo_type: 1)
+Kudo.create(name: "Eu aprendi", kudo_type: 1)
+Kudo.create(name: "Foi incrível", kudo_type: 2)
+Kudo.create(name: "Sou grato", kudo_type: 3)
 
 puts "Feito!"
