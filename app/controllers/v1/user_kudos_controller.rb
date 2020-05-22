@@ -53,7 +53,7 @@ module V1
 
     # Only allow a trusted parameter "white list" through.
     def user_kudo_params
-      params.require(:user_kudo).permit(:user_id, :kudo_id)
+      params.require(:user_kudo).permit(:user_id, :kudo_id, :sender_id)
     end
   end
 
