@@ -38,7 +38,7 @@ user.profile_image.attach(io: File.open('public/images/participants/rafa.jpg'), 
 user = User.create(name: "Felipe Prior", email: "felipe@email.com", password: "password123")
 user.profile_image.attach(io: File.open('public/images/participants/felipe.jpg'), filename: 'felipe.jpg')
 
-user = User.create(name: "Flayslane", email: "flayslane@email.com", password: "password123")
+user = User.create(name: "Flayslane da Silva", email: "flayslane@email.com", password: "password123")
 user.profile_image.attach(io: File.open('public/images/participants/flayslane.jpg'), filename: 'flayslane.jpg')
 
 user = User.create(name: "Gyzelly Bicalho", email: "gyzelly@email.com", password: "password123")
@@ -63,3 +63,11 @@ user = User.create(name: "Victor Hugo", email: "victor@email.com", password: "pa
 user.profile_image.attach(io: File.open('public/images/participants/victor.jpg'), filename: 'victor.jpg')
 
 puts "Prontinho! Email: <primeiro_nome>@email.com e senha: <primeiro_nome>"
+
+puts "Gerando Kudos..."
+
+kudo = Kudo.create(name: "Eu aprendi", kudo_type: 1)
+kudo = Kudo.create(name: "Foi incrível", kudo_type: 1)
+kudo = Kudo.create(name: "Sou grato", kudo_type: 1)
+
+puts "Feito!"
