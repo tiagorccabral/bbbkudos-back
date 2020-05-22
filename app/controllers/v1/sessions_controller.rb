@@ -1,5 +1,6 @@
 module V1
   class SessionsController < ApiController
+    include Rails.application.routes.url_helpers
     skip_before_action :authorized, only: [:create]
 
     def create
