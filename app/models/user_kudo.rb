@@ -20,7 +20,9 @@ class UserKudo < ApplicationRecord
 
   def self.possible_total_kudos
     user_amount = User.all.count
-    user_amount * @@maximum_kudos_per_type ** Kudo.select(:kudo_type).uniq.count
+    puts user_amount
+    puts Kudo.select(:kudo_type).uniq.count
+    user_amount * @@maximum_kudos_per_type * Kudo.select(:kudo_type).uniq.count
   end
 
   def self.total_kudos_given
