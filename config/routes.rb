@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resources :kudos
     resources :user_kudos
     post 'available_user_kudos', to: 'user_kudos#available_user_kudos'
+    get 'timeline_data', to: 'charts#timeline_data'
   end
 end

@@ -18,6 +18,15 @@ class UserKudo < ApplicationRecord
     end
   end
 
+  def self.possible_total_kudos
+    user_amount = User.all.count
+    user_amount * @@maximum_kudos_per_type
+  end
+
+  def self.total_kudos_given
+    UserKudo.all.count
+  end
+
   def self.available_kudos(user_kudos_params)
 
     available_kudos = []
