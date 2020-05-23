@@ -27,6 +27,19 @@ class UserKudo < ApplicationRecord
     UserKudo.all.count
   end
 
+  def self.user_given_kudos
+    user_given_kudos = []
+    User.all.each do |user|
+      user_kudos = UserKudo.where(sender_id: user.id)
+      given_kudos = []
+      user_kudos.each do |user_kudo|
+        given_kudos << user_kudo.kudo_id
+      end
+      user_given_kudos << {id: user.id, name: user.name, given_kudos: given_kudos}
+    end
+    user_given_kudos.sort_by {|obj| obj[:given_kudos].length}.reverse!
+  end
+
   def self.available_kudos(user_kudos_params)
 
     available_kudos = []
