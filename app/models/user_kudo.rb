@@ -20,7 +20,7 @@ class UserKudo < ApplicationRecord
 
   def self.possible_total_kudos
     user_amount = User.all.count
-    user_amount * @@maximum_kudos_per_type
+    user_amount * @@maximum_kudos_per_type ** Kudo.select(:kudo_type).uniq.count
   end
 
   def self.total_kudos_given
@@ -33,7 +33,7 @@ class UserKudo < ApplicationRecord
       user_kudos = UserKudo.where(sender_id: user.id)
       given_kudos = []
       user_kudos.each do |user_kudo|
-        given_kudos << user_kudo.kudo_id
+        given_kudos << {id: user_kudo.id, kudo_id: user_kudo.kudo_id}
       end
       user_given_kudos << {id: user.id, name: user.name, given_kudos: given_kudos}
     end
