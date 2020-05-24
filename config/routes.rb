@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     post 'login', to: 'sessions#create'
     resources :kudos
     resources :user_kudos
+    post 'my_kudos', to: 'user_kudos#my_kudos'
     post 'available_user_kudos', to: 'user_kudos#available_user_kudos'
     get 'timeline_data', to: 'charts#timeline_data'
   end

@@ -20,6 +20,25 @@ module V1
       render json: @user_kudo
     end
 
+    #POST v1/my_kudos
+    def my_kudos
+      recived_user_kudos = UserKudo.where(user_id: params[:user_id])
+      received_kudos = []
+      recived_user_kudos.each do |rcv_user_kudo|
+        user = User.find(rcv_user_kudo.sender_id)
+        received_kudos << {id: rcv_user_kudo.id, kudo_id: rcv_user_kudo.kudo_id, user_id: user.id, name: user.name, created_at: rcv_user_kudo.created_at}
+      end
+
+      sent_user_kudos = UserKudo.where(sender_id: params[:user_id])
+      sent_kudos = []
+      sent_user_kudos.each do |snt_user_kudo|
+        user = User.find(snt_user_kudo.user_id)
+        sent_kudos << {id: snt_user_kudo.id, kudo_id: snt_user_kudo.kudo_id, user_id: user.id, name: user.name, created_at: snt_user_kudo.created_at}
+      end
+
+      render json: {data: {received_kudos: received_kudos, sent_kudos: sent_kudos}}
+    end
+
     # POST v1/user_kudos
     def create
       @user_kudo = UserKudo.new(user_kudo_params)
